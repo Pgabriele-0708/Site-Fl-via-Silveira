@@ -1,0 +1,895 @@
+/* Importação das fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;700&display=swap');
+/* Reset de estilos, removendo margens e paddings padrão, e aplicando box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Estilo base para o body, definindo fonte e altura das linhas */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+/* Estilo para o header, com alinhamento flexível e sombra */
+header {
+  display: flex;
+  align-items: center;
+  /* Centraliza verticalmente */
+  padding: 1rem 2rem;
+  background-color: #3a1338;
+  height: 100px;
+  /* Altura fixa opcional */
+  overflow: hidden;
+  /* Evita que conteúdo ultrapasse */
+  
+  border: 2px solid #8f4e8c;
+  border-radius: 1px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+/* Seção de conteúdo, com padding e altura mínima */
+section {
+  padding: 2rem;
+}
+/* Estilo do logo, ajustando tamanho e alinhamento */
+.logo-flavia {
+
+  width: 150px;
+  /* Diminui o tamanho do logo */
+  height: auto;
+  /* Mantém a proporção da imagem */
+  margin-left: 1rem;
+  /* Aproxima da esquerda */
+  display: block;
+  /* Garante que o margin funcione corretamente */
+}
+
+/* Estilo para a seção de apresentação */
+.apresentacao {
+  background-image: url('../css/imagens/flavia.rj.jpeg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 6rem 2rem;
+  border: 2px solid #8f4e8c;
+  border-radius: 2px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  text-align: center;
+}
+/* Sobreposição com fundo semitransparente na seção de apresentação */
+.apresentacao::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(230, 230, 230, 0.315);
+  z-index: 0;
+}
+/* Imagem da foto da frente, com tamanho fixo e sombra */
+.foto-frente {
+  background-image: url('../css/imagens/flávia-banner1.png');
+  position: absolute;
+  top: 20%;
+  right: 0; /* Alinha à direita */
+  transform: translateX(-20%); /* Remove o 'translateX' para que ela não se mova */
+  width: 350px;
+  border-radius: 25%;
+  border: 3px solid #482a4631;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+/* Conteúdo da apresentação com animação de fade-in */
+.apresentacao_conteudo {
+  max-width: 80%;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.apresentacao_conteudo {
+  animation: fadeIn 2s ease-in;
+}
+/* Animação de fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Título da apresentação */
+.apresentacao_titulo {
+  font-size: 2.5rem;
+  color: #8f4e8c;
+  font-family: "Roboto", sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* CRP da psicóloga, estilizado com tamanho de fonte */
+.apresentacao_crp {
+  font-size: 2rem;
+  color: #8f4e8c;
+
+}
+
+/* Introdução na apresentação com sombra e margens ajustadas */
+.apresentacao-introducao {
+  position: relative;
+  top: -12px;
+  /* ou ajuste conforme a altura desejada */
+  margin: 0.5rem 0.1rem;
+  font-size: 1.5rem !important;
+  line-height: 1.8;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  color: #3a3a3ad7;
+}
+/* Destaque de palavras em negrito na introdução */
+.apresentacao-introducao strong {
+  color: #8f4e8c;
+  /* ou a cor que você quiser */
+}
+/* Margem final da apresentação com cor e estilo */
+.apresentacao-margem-final {
+  margin-top: -0.2rem; /* Reduzir a margem superior */
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  font-family: 'Poppins', sans-serif;
+  color: #70296e;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+/* Lista na apresentação */
+.apresentacao_lista {
+  font-size: 1.2rem;
+  list-style-type: none;
+  padding-left: 2rem;
+  margin-left: 2rem; /* Remover margem esquerda, caso não seja necessária */
+  line-height: 1;
+  font-family: "Roboto", sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  color: #181717d7;
+  text-align: left; /* Alinha o texto à esquerda */
+}
+
+/* Itens da lista com ícone à esquerda */
+.apresentacao_lista li {
+  position: relative;
+  /* Necessário para posicionar a imagem */
+  padding-left: 30px;
+  /* Espaço para a imagem à esquerda do texto */
+  line-height: 1.8;
+  /* Ajusta o espaçamento entre as linhas */
+}
+/* Adicionando ícone à esquerda de cada item da lista */
+.apresentacao_lista li::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  /* Coloca a imagem à esquerda do texto */
+  top: 30%;
+  /* Alinha verticalmente no meio */
+  transform: translateY(-50%);
+  /* Ajuste fino para centralizar */
+  width: 30px;
+  /* Largura da imagem */
+  height: 30px;
+  /* Altura da imagem */
+  background-image: url('./imagens/plant_nature_psychology_human_brain_natural_icon_220520.png');
+  /* Caminho da sua imagem */
+  background-size: contain;
+  /* Faz a imagem se ajustar ao tamanho */
+  background-repeat: no-repeat;
+  /* Não repete a imagem */
+}
+/* Item da lista com margem inferior */
+.apresentacao_item {
+  margin-bottom: 0.3rem;
+}
+
+/* Estilo do botão de WhatsApp */
+.botao-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #25D366;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  font-size: 1.1rem;
+  margin-top: 50px; /* Adiciona espaço acima do botão */
+}
+/* Ícone do botão de WhatsApp */
+.botao-whatsapp i {
+  font-size: 1.5rem;
+}
+/* Efeito de hover para o botão de WhatsApp */
+.botao-whatsapp:hover {
+  background-color: #1ebe57;
+ 
+}
+
+
+.problemas {
+  padding: 8rem 5rem;
+  background: linear-gradient(to right, #b36fae80, #ebe5ea75);
+  /* Cor de fundo da seção */
+  text-align: center;
+}
+
+
+
+
+.cards-problemas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.card-problema {
+  background: rgba(107, 3, 102, 0.1); /* cor mais suave */
+  border: 2px solid #8f4e8c; /* borda visível e elegante */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* sombra ajustada */
+  width: 100%;
+  max-width: 300px; /* define um limite elegante */
+  padding: 1.5rem;
+  text-align: left;
+  transition: transform 0.5s;
+}
+
+.card-problema:hover {
+  transform: translateY(-5px);
+}
+
+.card-problema h3 {
+  color: #3a1338;
+
+  margin-bottom: 0.5rem;
+
+}
+
+
+.problemas h2 {
+  font-size: 2rem;
+  /* Tamanho da fonte */
+  font-weight: bold;
+  /* Peso da fonte (negrito) */
+  color: #8f4e8c; 
+  /* Força a cor branca */
+  /* Cor do texto, aqui sendo branco */
+  margin-bottom: 1rem;
+  /* Espaçamento inferior */
+  text-transform: uppercase;
+  /* Deixa o texto em maiúsculas */
+  letter-spacing: 0px;
+  /* Aumenta o espaçamento entre as letras */
+  text-align: center;
+  /* Alinha o texto ao centro */
+  position: relative;
+  /* Necessário para usar 'top' */
+  top: -3rem;
+  /* Move o texto para cima sem afetar o layout dos cards */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  /* sombra suave no texto */
+}
+.sobre-psicologa {
+  background: linear-gradient(to right, #b36fae80, #ebe5ea75);
+  padding: 80px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2d2d2d;
+}
+
+.sobre-conteudo {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+
+
+
+.texto-sobre {
+  flex: 1;
+  padding: 30px;
+  background-color: rgba(107, 3, 102, 0.1); /* cor mais suave */
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.10);
+  border: 2px solid #70296e;
+}
+
+.sobre-h2 {
+  font-size: 2.2rem;
+  color: #934a90;
+  margin-bottom: 25px;
+}
+
+.texto-sobre p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 15px;
+  background-color: #70296e;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #b76cb3
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #fff;
+  margin-top: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-whatsapp i {
+  font-size: 1.3rem;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
+}
+/* Opcional: alinhar os dois botões em coluna (mobile) */
+@media (max-width: 768px) {
+  .botoes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+.cards-servicos {
+  flex: 1;
+  background-color: rgba(107, 3, 102, 0.1); /* cor mais suave */
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: row; /* Alterado para alinhar os itens lado a lado */
+  gap: 20px;
+  align-items: center; /* Garante que os itens se alinhem verticalmente */
+  border: 2px solid #3a1338a2;
+}
+.subtitulo-servicos {
+  font-size: 3.2rem !important;
+  color: #6b3768;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Sombreado nas letras */
+}
+@media (max-width: 768px) {
+  .card-servico {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.card-servico i {
+  font-size: 1rem;
+  color: #934a90 ;
+  margin-top: 4px;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  
+}
+
+.card-servico i:hover {
+  transform: scale(2) rotate(5deg);
+  color: #70296e;
+}
+.card-servico p {
+  margin: 0;
+  font-size: 1.2rem;
+  line-height: 1.5;
+
+
+}
+.servicos-imagem 
+  {
+    display: block;
+    margin: 0 auto; /* Centraliza o logo */
+    width: 800px; /* ou qualquer tamanho desejado */
+    height: auto; /* mantém a proporção */
+  }
+
+
+.meu-trabalho {
+  background: linear-gradient(to right, #b36fae80, #ebe5ea75);
+  padding: 80px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2d2d2d;
+}
+
+.trabalho-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.trabalho-conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+.trabalho-imagem img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.trabalho-texto {
+  flex: 1;
+  padding: 30px;
+  background-color: rgba(107, 3, 102, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.20);
+  
+}
+.titulo-trabalho {
+  font-size: 2.2rem;
+  color: #70296e;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Sombreado nas letras */
+ 
+}
+
+
+.texto-trabalho {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+.botoes {
+  margin-top: 20px;
+}
+.btn {
+  display: inline-block;
+  padding: 15px 20px;
+  background-color: #70296e71;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+
+/* Estilo geral para a seção de depoimentos */
+.depoimentos {
+  padding: 50px;
+  background: linear-gradient(to right, #b36fae80, #ebe5ea75);
+  margin-top: 0px;
+}
+
+.subtitulo-depoimentos {
+  font-size: 2rem;
+  color: #6b3768;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Sombreado */
+  margin-bottom: 30px;
+}
+
+/* Estilo para os cards de depoimentos */
+.cards-depoimentos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* Centraliza os cards */
+  
+
+}
+
+.card-depoimento {
+  background-color: rgba(107, 3, 102, 0.1); /* Cor suave */
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
+  max-width: 300px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #6b3768;
+}
+
+.card-depoimento p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.card-depoimento span {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #70296e; /* Cor do nome do paciente */
+}
+
+.icone-depoimento {
+  font-size: 2rem;
+  color: #934a90;
+  margin-bottom: 10px;
+}
+.card-depoimento span i {
+  margin-right: 6px;
+  color: #70296e;
+}
+.botoes-redes {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.botao-rede {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(107, 3, 102, 0.1);
+  color: #6b3768;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 2px solid #3a1338a2;
+  transition: all 0.3s ease;
+}
+
+.botao-rede i {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+/* Efeito hover */
+.botao-rede:hover {
+  background-color: #70296e;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.botao-rede:hover i {
+  transform: scale(1.2);
+}
+
+/* Cores específicas (opcional) */
+.botao-rede.whatsapp:hover {
+  background-color: #25d366;
+}
+
+.botao-rede.instagram:hover {
+  background-color: #e1306c;
+}
+
+.botao-rede.linkedin:hover {
+  background-color: #0077b5;
+  color: #fff;
+}
+.botao-rede.email:hover {
+  background-color: #6b3768;
+  color: #fff;
+}
+
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .cards-depoimentos {
+    flex-direction: column; /* Empilha os cards em telas pequenas */
+    align-items: center;
+  }
+
+  .card-depoimento {
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .subtitulo-depoimentos {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-depoimento p {
+    font-size: 1rem; /* Menor tamanho de fonte */
+  }
+
+  .subtitulo-depoimentos {
+    font-size: 1.5rem; /* Ajusta o título */
+  }
+}
+
+
+/* Animações suaves */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .trabalho-conteudo, .sobre-conteudo, .apresentacao {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .trabalho-imagem,
+  .trabalho-texto,
+  .servicos-imagem {
+    max-width: 100%;
+  }
+  .btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .btn-whatsapp {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+  .logo-flavia {
+    width: 120px;
+  }
+
+  .apresentacao_titulo {
+    font-size: 2rem;
+  }
+
+  .apresentacao-introducao {
+    font-size: 1.2rem;
+  }
+
+  .botao-whatsapp {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .foto-frente {
+    .foto-frente {
+      position: static;
+      transform: none;
+      width: 80%;
+      margin: 1rem auto;
+      display: block;
+    }
+  }
+  
+
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+  .apresentacao {
+    padding: 3rem 1rem;
+  }
+
+  .apresentacao_conteudo {
+    max-width: 90%;
+    left: 5%;
+    top: 40%;
+  }
+
+  .apresentacao_titulo {
+    font-size: 1.8rem;
+  }
+
+  .apresentacao-introducao {
+    font-size: 1rem;
+  }
+
+  .botao-whatsapp {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 356px) {
+  .apresentacao-introducao {
+    font-size: 0.85rem;
+  }
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes pulseLogo {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+/* Botão WhatsApp */
+.botao-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #25D366;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s ease;
+  font-size: 1.1rem;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .cards-servicos {
+    padding: 20px; /* Menos espaçamento nas telas menores */
+    flex-direction: column; /* Exibe os itens em uma coluna */
+  }
+}
+.servicos-imagem img {
+  width: 100%;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.servicos-imagem img:hover {
+  animation: pulseLogo 0.8s ease-in-out infinite;
+}
+.card-servico {
+  flex: 1 1 100%; /* Ocupa 100% da largura em telas pequenas */
+  margin-bottom: 20px; /* Espaçamento entre os cards */
+}
+.card-servico i {
+  font-size: 4rem; /* Reduz o tamanho do ícone em telas pequenas */
+}
+.subtitulo-servicos {
+  font-size: 1.5rem; /* Reduz o tamanho do subtítulo */
+}
+
+.card-servico i:hover {
+  color: #70296e;
+  animation: pulse 0.6s infinite;
+}
+@media (max-width: 480px) {
+  .card-servico p {
+    font-size: 1.2rem; /* Reduz o tamanho da fonte no texto */
+  }
+
+  .cards-servicos {
+    padding: 15px; /* Reduz ainda mais o padding */
+  }
+
+  .card-servico i {
+    font-size: 3rem; /* Ícones menores em telas muito pequenas */
+  }
+
+  .subtitulo-servicos {
+    font-size: 1.6rem; /* Ajusta o título para telas muito pequenas */
+  }
+}
+
+
+.card-servico {
+  animation: slideInLeft 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.apresentacao_titulo {
+  animation: brilhoSuave 3s ease-in-out infinite alternate;
+}
+
+@keyframes brilhoSuave {
+  from {
+    text-shadow: 2px 2px 8px rgba(143, 78, 140, 0.2);
+  }
+  to {
+    text-shadow: 2px 2px 12px rgba(143, 78, 140, 0.6);
+  }
+}
+
+.apresentacao_lista li {
+  opacity: 0;
+  animation: aparecer 1s forwards;
+}
+
+.apresentacao_lista li:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.apresentacao_lista li:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.apresentacao_lista li:nth-child(3) {
+  animation-delay: 0.9s;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Estilos do rodapé (footer) */
+footer {
+  background: linear-gradient(to right, #b36fae80, #ebe5ea75);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
